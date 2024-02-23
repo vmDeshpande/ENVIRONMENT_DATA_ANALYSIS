@@ -1,0 +1,167 @@
+<html lang="">
+
+<head>
+  <title>Environmet Data Analyties</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+</head>
+
+<body id="top">
+  <div class="bgded overlay padtop" style="background-image:url('images/01.jpg');">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+
+        <h1><a href="index.html">Environmet Data Analyties</a></h1>
+
+      </div>
+      <nav id="mainav" class="fl_right">
+
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a class="drop" href="#">services</a>
+            <ul>
+              <li><a href="#services">AQI</a></li>
+              <li><a href="#services">Weather</a></li>
+              <li><a href="#services">Wind</a></li>
+              <li><a href="#services">Your Location</a></li>              
+            </ul>
+          </li>
+          <li><a href="#windyMap">Windy map</a></li>
+          <li><a href="#feedbackdiv">Feedback</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageintro" class="hoc clear">
+
+      <article>
+        <h3 class="heading">Explore Environmet</h3>
+        <p>Analyzing environmental data involves parsing vast datasets, employing algorithms, and extracting meaningful insights to address ecological challenges and promote sustainability.</p>
+        <footer>
+          <ul class="nospace inline pushright">
+            <li><a class="btn" href="#services">AQI</a></li>
+            <li><a class="btn inverse" href="#services">weather</a></li>
+          </ul>
+        </footer>
+      </article>
+
+    </div>
+
+  </div>
+
+  <div id="services" class="wrapper row3">
+    <main class="hoc container clear">
+
+      <section id="services">
+        <div class="sectiontitle">
+
+          <h6 class="heading">services</h6>
+        </div>
+        <ul id="weather" class="nospace group grid-3">
+          <li class="one_third">
+            <article><a href="#"><i class="fas fa-spray-can"></i></a>
+              <h6 class="heading">Air Indix Qulity</h6>
+              <p>Air quality index reflects pollutants, influencing health. Monitoring it aids in public awareness and pollution control.</p>
+            </article>
+          </li>
+          <li class="one_third">
+            <article><a href="#"><i class="fas fa-user-secret"></i></a>
+              <h6 class="heading">weather</h6>
+              <p>Weather, dynamic atmospheric conditions, impacts daily life, influencing activities, clothing choices, and travel plans.</p>
+            </article>
+          </li>
+          <li class="one_third">
+            <article><a href="#"><i class="fas fa-couch"></i></a>
+              <h6 class="heading">Your Location</h6>
+              <p>Vel justo mattis magna vestibulum molestie quisque sagittis in a enim in metus ultrices tristique nam
+                semper.</p>
+            </article>
+          </li>
+
+        </ul>
+      </section>
+
+      <div class="clear"></div>
+    </main>
+  </div>
+
+  <div id="windyMap" class="wrapper row2">
+    <section class="container clear">
+  
+      <div class="sectiontitle">
+        <h6 class="heading">Map</h6>
+      </div>
+  
+      <div id="map" class="container-fluid p-0" style="height: 500px;">
+        <iframe id="windy" width="100%" height="100%" style="border:0;" frameborder="0"></iframe>
+      </div>
+  
+    </section>
+  </div>
+
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+
+      <div class="one_quarter first">
+        <h6 class="heading">Environmet Data Analyties</h6>
+        <p>Analyzing Environmental Data Involves Parsing Vast Datasets, Employing Algorithms, And Extracting Meaningful Insights To Address Ecological Challenges And Promote Sustainability.</p>
+        <ul class="faico clear">
+          <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+          <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+        <h6 class="heading">Services</h6>
+        <ul class="nospace linklist">
+          <li><a href="#services">Air Quality Index</a></li>
+          <li><a href="#services">Weather</a></li>
+          <li><a href="#services">Wind</a></li>
+          <li><a href="#services">Location Detail</a></li>
+          <li><a href="#windyMap">Windy Map</a></li>
+        </ul>
+      </div>
+      <div id="feedbackdiv" class="one_quarter">
+        <h6 class="heading">Leave Feedback</h6>
+        <p class="nospace btmspace-15">Share your insights on our environmental data analytics platform.</p>
+        <form id="feedbackForm" action="#" method="post">
+          <fieldset>
+            <legend>Feedback:</legend>
+            <input id="name" class="btmspace-15" type="text" value="" placeholder="Name">
+            <input id="email" class="btmspace-15" type="text" value="" placeholder="Email">
+            <input id="feedback" class="btmspace-15" type="text" value="" placeholder="Feedback">
+            <button class="btn" type="submit" value="submit">Submit</button>
+          </fieldset>
+        </form>        
+      </div>
+
+    </footer>
+  </div>
+
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+
+      <p class="fl_left">Copyright © 2024 - All Rights Reserved - <a href="#">Environmet Data Analyties</a></p>
+      <p class="fl_right">Made by <a target="_blank" href="https://the-developers-121.web.app">The Developers</a></p>
+
+    </div>
+  </div>
+
+  <a id="backtotop" href="#top" class=""><i class="fas fa-chevron-up"></i></a>
+  <!-- JAVASCRIPTS -->
+  <script src="layout/scripts/jquery.min.js"></script>
+  <script src="layout/scripts/jquery.backtotop.js"></script>
+  <script src="layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
