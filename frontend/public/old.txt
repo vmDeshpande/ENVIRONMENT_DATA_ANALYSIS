@@ -1,0 +1,213 @@
+<html lang="">
+
+<head>
+  <title>Environmet Data Analyties</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <style>
+
+.container21 {
+  color: white;
+  position: relative;
+  font-family: sans-serif;
+}
+
+.container21::before,
+.container21::after {
+  content: "";
+  background-color: #fab5704c;
+  position: absolute;
+}
+
+.container21::before {
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  top: 30%;
+  right: 7%;
+}
+
+.container21::after {
+  content: "";
+  position: absolute;
+  height: 3rem;
+  top: 8%;
+  right: 5%;
+  border: 1px solid;
+}
+
+.container21 .box {
+  width: 300px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+}
+
+.container21 .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container21 .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.container21 .box div p {
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.container21 .box:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid rgba(255, 255, 255, 0.454);
+}
+
+.info-card {
+  position: absolute;
+  top: 90px; 
+  left: 20px;
+  width: calc(100% - 40px);
+  max-width: 300px;
+  max-height: calc(100% - 100px);
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 0.7rem;
+  padding: 0;
+  border: none;
+  overflow-y: auto;
+}
+
+
+
+  </style>
+</head>
+
+<body id="top">
+  <div class="bgded overlay padtop" style="background-image:url('images/01.jpg');">
+    <header id="header" class="hoc clear">
+      <div id="logo" class="fl_left">
+
+        <h1><a href="index.html">Environmet Data Analyties</a></h1>
+
+      </div>
+      <nav id="mainav" class="fl_right">
+
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a class="drop" href="#">services</a>
+            <ul>
+              <li><a href="#services">AQI</a></li>
+              <li><a href="#services">Weather</a></li>
+              <li><a href="#services">Wind</a></li>
+              <li><a href="#services">Your Location</a></li>              
+            </ul>
+          </li>
+          <li><a href="#windyMap">Windy map</a></li>
+          <li><a href="#feedbackdiv">Feedback</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="pageintro" class="hoc clear">
+
+      <article>
+        <h3 class="heading">Explore Environmet</h3>
+        <p>Analyzing environmental data involves parsing vast datasets, employing algorithms, and extracting meaningful insights to address ecological challenges and promote sustainability.</p>
+        <footer>
+          <ul class="nospace inline pushright">
+            <li><a class="btn" href="#services">AQI</a></li>
+            <li><a class="btn inverse" href="#services">weather</a></li>
+          </ul>
+        </footer>
+      </article>
+
+    </div>
+
+  </div>
+
+  <div id="windyMap" class="wrapper row2">
+    <section class="container clear">
+      <div class="map-container">
+        <iframe id="windy" width="1315px" height="575px" style="border:0;" frameborder="0"></iframe>
+        <div id="info-card">
+          <!-- dynmically available -->
+        </div>
+      </div>
+    </section>
+  </div>
+  
+
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+
+      <div class="one_quarter first">
+        <h6 class="heading">Environmet Data Analyties</h6>
+        <p>Analyzing Environmental Data Involves Parsing Vast Datasets, Employing Algorithms, And Extracting Meaningful Insights To Address Ecological Challenges And Promote Sustainability.</p>
+        <ul class="faico clear">
+          <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+          <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+          <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
+          <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
+        </ul>
+      </div>
+      <div class="one_quarter">
+        <h6 class="heading">Services</h6>
+        <ul class="nospace linklist">
+          <li><a href="#services">Air Quality Index</a></li>
+          <li><a href="#services">Weather</a></li>
+          <li><a href="#services">Wind</a></li>
+          <li><a href="#services">Location Detail</a></li>
+          <li><a href="#windyMap">Windy Map</a></li>
+        </ul>
+      </div>
+      <div id="feedbackdiv" class="one_quarter">
+        <h6 class="heading">Leave Feedback</h6>
+        <p class="nospace btmspace-15">Share your insights on our environmental data analytics platform.</p>
+        <form id="feedbackForm" action="#" method="post">
+          <fieldset>
+            <legend>Feedback:</legend>
+            <input id="name" class="btmspace-15" type="text" value="" placeholder="Name">
+            <input id="email" class="btmspace-15" type="text" value="" placeholder="Email">
+            <input id="feedback" class="btmspace-15" type="text" value="" placeholder="Feedback">
+            <button class="btn" type="submit" value="submit">Submit</button>
+          </fieldset>
+        </form>        
+      </div>
+
+    </footer>
+  </div>
+
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+
+      <p class="fl_left">Copyright © 2024 - All Rights Reserved - <a href="#">Environmet Data Analyties</a></p>
+      <p class="fl_right">Made by <a target="_blank" href="https://the-developers-121.web.app">The Developers</a></p>
+
+    </div>
+  </div>
+
+  <a id="backtotop" href="#top" class=""><i class="fas fa-chevron-up"></i></a>
+  <!-- JAVASCRIPTS -->
+  <script src="layout/scripts/jquery.min.js"></script>
+  <script src="layout/scripts/jquery.backtotop.js"></script>
+  <script src="layout/scripts/jquery.mobilemenu.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

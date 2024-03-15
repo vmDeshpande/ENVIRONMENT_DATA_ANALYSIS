@@ -9,9 +9,148 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+  <style>
+
+.cardm {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 46.64%;
+  left: 50%;
+}
+
+.card {
+  position: absolute;
+  width: 250px;
+  height: 130px;
+  border-radius: 25px;
+  background: whitesmoke;
+  color: black;
+  z-index: 2;
+  transition: .4s ease-in-out;
+}
+
+.weather {
+  position: relative;
+  margin: 1em;
+}
+
+.main {
+  font-size: 2em;
+  position: relative;
+  top: -3em;
+  left: 4.3em;
+}
+
+.mainsub {
+  position: relative;
+  top: -10.2em;
+  left: 14em;
+  font-size: 0.6em;
+}
+
+.card2 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+  height: 130px;
+  border-radius: 35px;
+  background: white;
+  z-index: 0;
+  transition: .4s ease-in-out;
+}
+
+.card:hover {
+  background-color: #FFE87C;
+  cursor: pointer;
+}
+
+.card:hover + .card2 {
+  height: 300px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.card:hover + .card2 .lower {
+  top: 20.2em;
+}
+
+.upper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  color: black;
+  left: 2.8em;
+  top: 0.1em;
+  gap: 4em;
+}
+
+.humiditytext {
+  position: relative;
+  left: 4.6em;
+  top: 3.9em;
+  font-size: 0.6em;
+}
+
+.airtext {
+  position: relative;
+  left: 4.8em;
+  top: 3.9em;
+  font-size: 0.6em;
+}
+
+.lower {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  text-align: center;
+  color: black;
+  left: 4em;
+  top: 1em;
+  margin-top: 2.7em;
+  font-size: 0.7em;
+  transition: .4s ease-in-out;
+}
+
+.aqi {
+  margin-right: 3.25em;
+}
+
+.realfeel {
+  margin-right: 1.8em;
+}
+
+.card3 {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 240px;
+  height: 30px;
+  top: 5.4em;
+  left: -3.2em;
+  font-size: 1.24em;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  background: limegreen;
+  transition: .4s ease-in-out;
+}
+
+.info-card {
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    width: 300px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+  }
+  </style>
 </head>
 
 <body id="top">
+  
   <div class="bgded overlay padtop" style="background-image:url('images/01.jpg');">
     <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
@@ -54,104 +193,15 @@
 
   </div>
 
-  <div id="services" class="wrapper row3">
-    <main class="hoc container clear">
-
-      <section id="services">
-        <div class="sectiontitle">
-
-          <h6 class="heading">services</h6>
-        </div>
-        <ul id="weather" class="nospace group grid-3">
-          <li class="one_third">
-            <article><a href="#"><i class="fas fa-spray-can"></i></a>
-              <h6 class="heading">Air Indix Qulity</h6>
-              <p>Air quality index reflects pollutants, influencing health. Monitoring it aids in public awareness and pollution control.</p>
-            </article>
-          </li>
-          <li class="one_third">
-            <article><a href="#"><i class="fas fa-user-secret"></i></a>
-              <h6 class="heading">weather</h6>
-              <p>Weather, dynamic atmospheric conditions, impacts daily life, influencing activities, clothing choices, and travel plans.</p>
-            </article>
-          </li>
-          <li class="one_third">
-            <article><a href="#"><i class="fas fa-couch"></i></a>
-              <h6 class="heading">Your Location</h6>
-              <p>Vel justo mattis magna vestibulum molestie quisque sagittis in a enim in metus ultrices tristique nam
-                semper.</p>
-            </article>
-          </li>
-
-        </ul>
-      </section>
-
-      <div class="clear"></div>
-    </main>
-  </div>
-
   <div id="windyMap" class="wrapper row2">
     <section class="container clear">
-  
-      <div class="sectiontitle">
-        <h6 class="heading">Map</h6>
+      <div class="map-container">
+        <iframe id="windy" width="1315px" height="575px" style="border:0;" frameborder="0"></iframe>
+        <div id="info-card">
+          <!-- dynmically available -->
+        </div>
       </div>
-  
-      <div id="map" class="container-fluid p-0" style="height: 500px;">
-        <iframe id="windy" width="100%" height="100%" style="border:0;" frameborder="0"></iframe>
-      </div>
-  
     </section>
-  </div>
-
-  <div class="wrapper row4">
-    <footer id="footer" class="hoc clear">
-
-      <div class="one_quarter first">
-        <h6 class="heading">Environmet Data Analyties</h6>
-        <p>Analyzing Environmental Data Involves Parsing Vast Datasets, Employing Algorithms, And Extracting Meaningful Insights To Address Ecological Challenges And Promote Sustainability.</p>
-        <ul class="faico clear">
-          <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
-          <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
-          <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
-        </ul>
-      </div>
-      <div class="one_quarter">
-        <h6 class="heading">Services</h6>
-        <ul class="nospace linklist">
-          <li><a href="#services">Air Quality Index</a></li>
-          <li><a href="#services">Weather</a></li>
-          <li><a href="#services">Wind</a></li>
-          <li><a href="#services">Location Detail</a></li>
-          <li><a href="#windyMap">Windy Map</a></li>
-        </ul>
-      </div>
-      <div id="feedbackdiv" class="one_quarter">
-        <h6 class="heading">Leave Feedback</h6>
-        <p class="nospace btmspace-15">Share your insights on our environmental data analytics platform.</p>
-        <form id="feedbackForm" action="#" method="post">
-          <fieldset>
-            <legend>Feedback:</legend>
-            <input id="name" class="btmspace-15" type="text" value="" placeholder="Name">
-            <input id="email" class="btmspace-15" type="text" value="" placeholder="Email">
-            <input id="feedback" class="btmspace-15" type="text" value="" placeholder="Feedback">
-            <button class="btn" type="submit" value="submit">Submit</button>
-          </fieldset>
-        </form>        
-      </div>
-
-    </footer>
-  </div>
-
-  <div class="wrapper row5">
-    <div id="copyright" class="hoc clear">
-
-      <p class="fl_left">Copyright © 2024 - All Rights Reserved - <a href="#">Environmet Data Analyties</a></p>
-      <p class="fl_right">Made by <a target="_blank" href="https://the-developers-121.web.app">The Developers</a></p>
-
-    </div>
   </div>
 
   <a id="backtotop" href="#top" class=""><i class="fas fa-chevron-up"></i></a>
